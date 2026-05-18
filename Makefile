@@ -6,7 +6,7 @@
 #    By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/04 15:09:15 by mkaneko           #+#    #+#              #
-#    Updated: 2026/05/18 16:07:44 by mkaneko          ###   ########.fr        #
+#    Updated: 2026/05/18 19:25:16 by mkaneko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,10 @@ NAME     = libftprintf.a
 CC       = cc
 CFLAGS   = -Wall -Wextra -Werror
 
-INCS_DIR = includes
-
 SRCS = \
-     srcs/ft_printf.c \
-     srcs/ft_printf_functions.c\
-     srcs/ft_print_pointer.c
+	ft_printf.c \
+	ft_printf_functions.c\
+	ft_print_pointer.c
 	 
 AR       = ar
 ARFLAGS  = rcs
@@ -34,7 +32,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 %.o: %.c
-	$(CC) $(CFLAGS) -I$(INCS_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS) 
