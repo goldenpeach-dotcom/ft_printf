@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 16:19:46 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/05/17 00:32:24 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/05/18 16:09:54 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdarg.h>
 # include <stddef.h>
 
-int		ft_printf(const char *format, ...);
+int		ft_printf(const char	*format, ...);
 int		handle_format(char specifier, va_list *args);
 
 int		print_char(char c);
