@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:04:36 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/05/17 00:34:43 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/05/18 13:25:48 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_printf(const char *format, ...)
 	int		total_len;
 
 	va_start(args, format);
+	if (!format)
+		return (-1);
 	i = 0;
 	total_len = 0;
 	while (format[i])

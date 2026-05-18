@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 22:25:30 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/05/17 00:35:15 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/05/18 13:17:35 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	print_ptr(va_list *args)
 
 	ptr = va_arg(*args, void *);
 	if (!ptr)
-		return (print_str("0x0"));
+		return (print_str("(nil)"));
 	addr = (unsigned long)ptr;
 	print_str("0x");
 	return (2 + print_pointer(addr));
