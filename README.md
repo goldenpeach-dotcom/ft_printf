@@ -40,7 +40,7 @@ Handles large values such as INT_MIN and LONG_MAX by carefully selecting the cor
 
 Splits functionality into separate output functions for readability and maintainability.
 
-## Supported Conversions
+### Supported Conversions
 Specifier	Description
 - %c	Prints a single character
 - %s	Prints a string (safe handling of NULL)
@@ -102,7 +102,7 @@ AI provided advice when debugging issues that were difficult to identify.
 
 
 
-## 説明
+## 説明 Description
 
 libcのprintf()を再実装しました。
 可変引数（引数の数が毎回変わる関数）を扱うためには `stdarg.h`のマクロ を使用する必要があります。
@@ -134,7 +134,7 @@ va_endでva_listをクリーンアップして最後に出力した文字数を�
 - 第一引数がNULLのときは,printfがエラーのときの動きに合わせ、return(-1)としました。
 ---
 
-## 対応した変換
+### 対応した変換
 
 | Specifier | Description |
 |----------|-------------|
@@ -150,7 +150,7 @@ va_endでva_listをクリーンアップして最後に出力した文字数を�
 
 ---
 
-## ビルド方法
+## ビルド方法 Instruction
 
 ### Makefile
 
@@ -163,7 +163,7 @@ va_endでva_listをクリーンアップして最後に出力した文字数を�
 - `make re`  
   → 全削除後に再ビルド  
 
-### コンパイル
+#### コンパイル
 
 - cc -Wall -Wextra -Werror
 
@@ -181,7 +181,7 @@ va_endでva_listをクリーンアップして最後に出力した文字数を�
 make
 cc main.c -Wall -Wextra -Werror -L. ft_printf -lftprintf
 ```
-## 参考文献
+## 参考文献 Resources
 
 https://programming-place.net/ppp/contents/c/appendix/reference/printf.html
 
