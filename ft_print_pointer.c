@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 22:25:30 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/05/18 13:17:35 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/05/19 10:18:30 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	print_pointer(unsigned long n)
 
 int	print_ptr(va_list *args)
 {
-	unsigned long long	addr;
+	unsigned long		addr;
 	void				*ptr;
 
 	ptr = va_arg(*args, void *);

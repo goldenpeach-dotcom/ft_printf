@@ -79,6 +79,7 @@ c
 Link the library during compilation:
 
 bash
+make
 cc main.c -I ft_printf/includes -L ft_printf -lftprintf -o myprogram
 
 ## Resources
@@ -129,9 +130,8 @@ va_endでva_listをクリーンアップして最後に出力した文字数を�
 - `handle_format()` にてフォーマット指定子ごとの処理を分岐。
 - 可変引数の読み取り位置がずれないよう、関数分割後も 常に同じ参照位置を維持するよう注意。
 - `INT_MIN` や `LONG_MAX` などの大きな値にも対応するため、`va_arg` の型指定を正確に実装。
-- 出力形式ごとに関数を分割し、読みやすく保守しやすい構造に。
+- 出力形式ごとに関数を分割し、読みやすく保守しやすい構造に。数字の出力に関しては16進数まで同じ関数で変換できるように作成。
 - 第一引数がNULLのときは,printfがエラーのときの動きに合わせ、return(-1)としました。
-
 ---
 
 ## 対応した変換
@@ -178,6 +178,7 @@ va_endでva_listをクリーンアップして最後に出力した文字数を�
 2. コンパイル時にライブラリをリンク。
 
 ```
+make
 cc main.c -Wall -Wextra -Werror -L. ft_printf -lftprintf
 ```
 ## 参考文献
