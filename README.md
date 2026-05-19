@@ -120,35 +120,32 @@ ft_print_pointer.c
 ```
 
 ##### Code Overview
-```
-ft_printf.c
 
-	ft_printf
+- ft_printf.c
 
-	handle_format
+	- ft_printf
 
-	print_int
+	- handle_format
 
-	print_hex
-```
-```
-ft_printf_functions.c
+	- print_int
 
-	print_unsigned
+	- print_hex
 
-	print_digit
+- ft_printf_functions.c
 
-	print_str
+	- print_unsigned
 
-	print_char
-```
-```
-ft_print_pointer.c
+	- print_digit
 
-	print_ptr
+	- print_str
 
-	print_pointer
-```
+	- print_char
+
+- ft_print_pointer.c
+
+	- print_ptr
+
+	- print_pointer
 
 
 ##### Specifier	Description
@@ -167,25 +164,26 @@ ft_print_pointer.c
 
 
 ## Instruction
-Makefile
-make / make all → builds libftprintf.a
+#### Makefile
+- `make` / `make all` → builds libftprintf.a
 
-make clean → removes object files
+- `make clean` → removes object files
 
-make fclean → removes object files + library
+- `make fclean` → removes object files + library
 
-make re → rebuild from scratch
+- `make re` → rebuild from scratch
 
 ### Compilation
-
+```
 cc -Wall -Wextra -Werror
-使い方
-Include the header in your source file:
 
+Include the header in your source file:
+```
+```
 c
 #include "ft_printf.h"
 Compile and link with the library:
-
+```
 c 
 ```
 make
@@ -320,34 +318,33 @@ These were used to understand the behavior of the standard printf.
 すべて同じディレクトリに配置しています（42 の「1 ファイル 5 関数」制限に対応）。
 
 コード
-```
-Makefile
-README.md
-ft_printf.h
-ft_printf.c
-ft_printf_functions.c
-ft_print_pointer.c
-ft_printf.c
-```
-```
--ft_printf.c
-	ft_printf
-	handle_format
-	print_int
-	print_hex
-```
-```
+
+	Makefile
+	README.md
+	ft_printf.h
+	ft_printf.c
+	ft_printf_functions.c
+	ft_print_pointer.c
+	ft_printf.c
+
+
+- ft_printf.c 
+	- ft_printf
+	- handle_format
+	- print_int
+	- print_hex
+	
 - ft_printf_functions
-	print_unsigned
-	print_digit
-	print_str
-	print_char
-```
-```
+	- print_unsigned
+	- print_digit
+	- print_str
+	- print_char
+
+
 - ft_print_pointer.c
-	print_ptr
-	print_pointer
-```
+	- print_ptr
+	- print_pointer
+
 ---
 
 ### 対応した変換
@@ -380,9 +377,9 @@ ft_printf.c
   → 全削除後に再ビルド  
 
 #### コンパイル
-
+```
 - cc -Wall -Wextra -Werror
-
+```
 
 ### 使い方
 
