@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 22:25:30 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/05/19 10:21:52 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/05/20 20:15:29 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,15 @@ int	print_pointer(unsigned long n)
 {
 	static char	base[] = "0123456789abcdef";
 	int			count;
+	int			res;
 
+	res = 0;
 	count = 0;
 	if (n >= 16)
 		count += print_pointer(n / 16);
-	write(1, &base[n % 16], 1);
+	res = write(1, &base[n % 16], 1);
+	if (res < 0)
+		return (-1);
 	return (count + 1);
 }
 

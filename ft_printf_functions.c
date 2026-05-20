@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:04:36 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/05/18 16:14:01 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/05/20 19:44:20 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	print_digit(unsigned long long n, int base, int upper)
 	static char		base_lower[] = "0123456789abcdef";
 	static char		base_upper[] = "0123456789ABCDEF";
 	char			*b;
+	int				res;
 
 	if (upper)
 		b = base_upper;
@@ -38,7 +39,9 @@ int	print_digit(unsigned long long n, int base, int upper)
 	count = 0;
 	if (n >= (unsigned long long)base)
 		count = count + print_digit(n / base, base, upper);
-	write (1, &b[n % base], 1);
+	res = write (1, &b[n % base], 1);
+	if (res < 0)
+		return (-1);
 	return (count + 1);
 }
 

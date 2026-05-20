@@ -6,7 +6,7 @@
 #    By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/04 15:09:15 by mkaneko           #+#    #+#              #
-#    Updated: 2026/05/18 19:25:16 by mkaneko          ###   ########.fr        #
+#    Updated: 2026/05/20 20:22:19 by mkaneko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-%.o: %.c
+%.o: %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

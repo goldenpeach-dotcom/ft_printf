@@ -6,7 +6,7 @@
 /*   By: mkaneko <mkaneko@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:04:36 by mkaneko           #+#    #+#             */
-/*   Updated: 2026/05/18 13:25:48 by mkaneko          ###   ########.fr       */
+/*   Updated: 2026/05/20 20:12:15 by mkaneko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,27 @@ int	ft_printf(const char *format, ...)
 	va_list	args;
 	int		i;
 	int		total_len;
+	int		res;
 
-	va_start(args, format);
 	if (!format)
 		return (-1);
+	va_start(args, format);
 	i = 0;
 	total_len = 0;
 	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1] != '\0')
-		{
-			total_len = total_len + handle_format(format[i + 1], &args);
-			i = i + 2;
-		}
+		if (format[i] == '%' && format[i + 1] == '\0')
+			return(-1);
+		if (format[i] == '%')	
+			res = handle_format(format[++i], &args);
 		else
-		{
-			write (1, &format[i], 1);
-			total_len++;
-			i++;
-		}
+			res = write (1, &format[i], 1);
+		if (res < 0)
+			return (va_end(args), -1);
+		total_len = total_len + res;
+		i++;
 	}
-	va_end(args);
-	return (total_len);
+	return (va_end(args), total_len);
 }
 
 int	handle_format(char specifier, va_list *args)
@@ -59,7 +58,7 @@ int	handle_format(char specifier, va_list *args)
 		return (print_hex(args, 1));
 	if (specifier == '%')
 		return (write(1, "%", 1));
-	return (0);
+	return (-1);
 }
 
 int	print_int(va_list *args)
@@ -67,17 +66,23 @@ int	print_int(va_list *args)
 	int		n;
 	long	nn;
 	int		count;
+	int		res;
 
 	n = va_arg(*args, int);
 	nn = n;
 	count = 0;
 	if (nn < 0)
 	{
-		write(1, "-", 1);
+		res = write(1, "-", 1);
+		if (res < 0)
+			return (-1);
 		nn = -nn;
 		count++;
 	}
-	count = count + print_digit((unsigned long long)nn, 10, 0);
+	res = print_digit((unsigned long long)nn, 10, 0);
+	if (res < 0)
+		return (-1);
+	count = count + res;
 	return (count);
 }
 
