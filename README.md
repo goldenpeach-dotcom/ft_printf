@@ -147,6 +147,7 @@ ft_print_pointer.c
 
 	- print_pointer
 
+	- ft_strlen(libft)
 
 ##### Specifier	Description
 | Specifier | Description |
@@ -344,7 +345,7 @@ These were used to understand the behavior of the standard printf.
 - ft_print_pointer.c
 	- print_ptr
 	- print_pointer
-
+	- ft_strlen(libft)
 ---
 
 ### 対応した変換
