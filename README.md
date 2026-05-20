@@ -392,7 +392,7 @@ These were used to understand the behavior of the standard printf.
 
 ```
 make
-cc main.c -Wall -Wextra -Werror -L. ft_printf -lftprintf
+cc main.c -Wall -Wextra -Werror -L. -lftprintf
 ```
 ---
 
